@@ -35,9 +35,11 @@ GovNotion is a simple web application inspired by Notion. It allows you to creat
 4. Under `Source`, select the branch (`master` or `main`) and root directory.
 5. Save the settings. Your app will be available at `https://github.com/gitkv/govnotion`.
 
-## Screenshot
+## Screenshots
 
 ![GovNotion Screenshot](screen.png)
+
+![GovNotion Screenshot](screen_mobile.png)
 
 ## License
 

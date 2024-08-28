@@ -282,3 +282,78 @@ body {
 .page-list-item .delete-page-btn {
     visibility: hidden;
 }
+
+/* Мобильная версия (экраны до 768px) */
+@media (max-width: 768px) {
+    .app {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        max-width: none;
+        padding: 10px;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    .toolbar {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .toolbar button {
+        margin-bottom: 10px;
+        width: 48%;
+        box-sizing: border-box;
+    }
+
+    #page-title {
+        font-size: 1.5em;
+    }
+
+    .tags-container {
+        margin-top: 10px;
+    }
+
+    .page-list-item {
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    .delete-page-btn {
+        position: static;
+        margin-left: 10px;
+    }
+
+    .search-bar input {
+        padding: 8px;
+    }
+
+    .command-palette {
+        width: 100%;
+        left: 0;
+    }
+}
+
+/* Очень маленькие экраны (экраны до 480px) */
+@media (max-width: 480px) {
+    .toolbar button {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .page-list-item {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    .search-bar input {
+        padding: 6px;
+    }
+}
