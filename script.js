@@ -232,13 +232,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function createPageElement(page, level = 0) {
+    function createPageElement(page, level = 0.5) {
         const pageElement = document.createElement('div');
         pageElement.classList.add('page-list-item');
         pageElement.textContent = page.title;
-        pageElement.style.paddingLeft = `${level * 20}px`;
         pageElement.dataset.id = page.id;
-    
+
         // Add delete button
         const deleteButton = document.createElement('button');
         deleteButton.textContent = '×';
@@ -248,7 +247,12 @@ document.addEventListener('DOMContentLoaded', () => {
             deletePage(page.id);
         });
         pageElement.appendChild(deleteButton);
-    
+
+        // Добавляем обработчик клика для переключения страниц
+        pageElement.addEventListener('click', () => {
+            setActivePage(page.id);
+        });
+
         // Add child pages
         const childPages = pages.filter(childPage => childPage.parentId === page.id);
         if (childPages.length > 0) {
@@ -259,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             pageElement.appendChild(childrenContainer);
         }
-    
+
         return pageElement;
     }
 

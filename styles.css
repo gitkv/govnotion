@@ -31,6 +31,7 @@ body {
 }
 
 .page-list {
+    position: relative;
     margin-bottom: 20px;
 }
 
@@ -217,14 +218,15 @@ body {
 }
 
 .page-list-item {
-    padding: 5px;
+    padding: 5px 10px;
     margin-bottom: 5px;
     cursor: move;
     background-color: #f0f0f0;
     border-radius: 3px;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .page-list-item.dragging {
@@ -256,6 +258,8 @@ body {
 }
 
 .delete-page-btn {
+    position: absolute;
+    right: 5px;
     background: none;
     border: none;
     cursor: pointer;

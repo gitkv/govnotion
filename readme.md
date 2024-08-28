@@ -20,7 +20,7 @@ GovNotion is a simple web application inspired by Notion. It allows you to creat
 
 2. **Navigate to the project directory**:
     ```bash
-    cd REPOSITORY
+    cd govnotion
     ```
 
 3. **Open `index.html` in your browser** to start using the application locally.
