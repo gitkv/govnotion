@@ -1,0 +1,275 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.app {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f7f7f7;
+    border-right: 1px solid #e0e0e0;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    margin-bottom: 20px;
+}
+
+.page-list {
+    margin-bottom: 20px;
+}
+
+#new-page-btn, #reset-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#new-page-btn:hover, #reset-btn:hover {
+    background-color: #d0d0d0;
+}
+
+#reset-btn {
+    background-color: #ff4d4f;
+    color: white;
+}
+
+#reset-btn:hover {
+    background-color: #ff7875;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.content-header {
+    margin-bottom: 20px;
+}
+
+#page-title {
+    font-size: 2em;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.editor {
+    outline: none;
+    min-height: 200px;
+}
+
+.editor:empty:before {
+    content: 'Type something...';
+    color: #999;
+}
+
+.command-palette {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 5px 0;
+}
+
+.command-item {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.command-item:hover {
+    background-color: #f0f0f0;
+}
+
+.hidden {
+    display: none;
+}
+
+.heading1 {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.heading2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+}
+
+.bullet-list {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.numbered-list {
+    padding-left: 20px;
+    list-style-type: decimal;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.todo-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.search-bar {
+    margin-bottom: 15px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+}
+
+.toolbar {
+    margin-bottom: 10px;
+}
+
+.toolbar button {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.toolbar button:hover {
+    background-color: #f0f0f0;
+}
+
+.toolbar button.active {
+    background-color: #e0e0e0;
+}
+
+.tags-container {
+    margin-top: 10px;
+}
+
+#tag-input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+}
+
+#tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+.tag {
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    padding: 2px 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.tag .remove-tag {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.subpage {
+    margin-left: 20px;
+    padding: 5px;
+    background-color: #f7f7f7;
+    border-left: 2px solid #e0e0e0;
+    cursor: pointer;
+}
+
+.page-list-item {
+    padding: 5px;
+    margin-bottom: 5px;
+    cursor: move;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-list-item.dragging {
+    opacity: 0.5;
+}
+
+.editor img {
+    max-width: 100%;
+    height: auto;
+}
+
+.todo-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.todo-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.todo-item span {
+    flex-grow: 1;
+}
+
+.delete-page-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #999;
+    padding: 2px 5px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.delete-page-btn:hover {
+    background-color: #ff4d4f;
+    color: white;
+}
+
+.page-list-item:hover .delete-page-btn {
+    visibility: visible;
+}
+
+.page-list-item .delete-page-btn {
+    visibility: hidden;
+}

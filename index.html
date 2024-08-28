@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GovNotion</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" sizes="512x512" href="/android-chrome-512x512.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.13.0/Sortable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/turndown/7.1.1/turndown.min.js"></script>
+</head>
+<body>
+    <div class="app">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="/govnotion.png" alt="GovNotion" style="width: 150px;">
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search pages...">
+            </div>
+            <div id="page-list" class="page-list">
+                <!-- Pages will be dynamically added here -->
+            </div>
+            <button id="new-page-btn">+ New Page</button>
+            <button id="reset-btn">Reset All</button>
+        </div>
+        <div class="main-content">
+            <div class="content-header">
+                <input type="text" id="page-title" placeholder="Untitled">
+                <div class="tags-container">
+                    <input type="text" id="tag-input" placeholder="Add tags...">
+                    <div id="tags-list"></div>
+                </div>
+            </div>
+            <div class="toolbar">
+                <button data-command="bold"><i class="fas fa-bold"></i></button>
+                <button data-command="italic"><i class="fas fa-italic"></i></button>
+                <button data-command="underline"><i class="fas fa-underline"></i></button>
+                <button data-command="strikeThrough"><i class="fas fa-strikethrough"></i></button>
+                <button data-command="insertUnorderedList"><i class="fas fa-list-ul"></i></button>
+                <button data-command="insertOrderedList"><i class="fas fa-list-ol"></i></button>
+                <button data-command="insertTodoList"><i class="fas fa-tasks"></i></button>
+                <button id="insert-image-btn"><i class="fas fa-image"></i></button>
+                <button id="export-btn"><i class="fas fa-file-export"></i></button>
+            </div>
+            <div id="editor" class="editor" contenteditable="true">
+                <p>Type '/' for commands or start writing in markdown</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="command-palette" class="command-palette hidden">
+        <div class="command-item" data-type="text">Text</div>
+        <div class="command-item" data-type="heading1">Heading 1</div>
+        <div class="command-item" data-type="heading2">Heading 2</div>
+        <div class="command-item" data-type="bullet-list">Bullet List</div>
+        <div class="command-item" data-type="numbered-list">Numbered List</div>
+        <div class="command-item" data-type="todo">To-do List</div>
+        <div class="command-item" data-type="subpage">Subpage</div>
+    </div>
+    <input type="file" id="image-upload" accept="image/*" style="display: none;">
+    <script src="/script.js"></script>
+</body>
+</html>
